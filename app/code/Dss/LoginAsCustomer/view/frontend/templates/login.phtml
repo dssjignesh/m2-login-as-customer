@@ -1,0 +1,36 @@
+
+<?php
+/**
+ * Digit Software Solutions..
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ *
+ * @category   Dss
+ * @package    Dss_LoginAsCustomer
+ * @author     Extension Team
+ * @copyright Copyright (c) 2024 Digit Software Solutions. ( https://digitsoftsol.com )
+ */
+?>
+<?php
+/**
+ * @var $block \Magento\Framework\View\Element\Template
+ */
+?>
+<p>
+    <?=$escaper->escapeHtml(__('You have logged in and will go to customer account in 5 seconds.')); ?>
+</p>
+<form id="loginascustomer" method="post" action="<?=$escaper->escapeHtml(__($block->getUrl('*/*/post'))); ?>">
+    <button style="display: none;" id="loginascustomer-button" type="submit" class="action save primary" title="">
+        <span> >> </span>
+    </button>
+</form>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Dss_LoginAsCustomer/js/login":{}
+        }
+    }
+</script>
