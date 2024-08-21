@@ -1,4 +1,3 @@
-
 <?php
 /**
  * Digit Software Solutions..
@@ -20,9 +19,9 @@
  */
 ?>
 <p>
-    <?=$escaper->escapeHtml(__('You have logged in and will go to customer account in 5 seconds.')); ?>
+    <?= $escaper->escapeHtml(__('You have logged in and will go to customer account in 5 seconds.')); ?>
 </p>
-<form id="loginascustomer" method="post" action="<?=$escaper->escapeHtml(__($block->getUrl('*/*/post'))); ?>">
+<form id="loginascustomer" method="post" action="<?= $escaper->escapeHtml(__($block->getUrl('*/*/post'))); ?>">
     <button style="display: none;" id="loginascustomer-button" type="submit" class="action save primary" title="">
         <span> >> </span>
     </button>
