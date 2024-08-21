@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Digit Software Solutions..
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the EULA
+ * that is bundled with this package in the file LICENSE.txt.
+ *
+ * @category   Dss
+ * @package    Dss_LoginAsCustomer
+ * @author     Extension Team
+ * @copyright Copyright (c) 2024 Digit Software Solutions. ( https://digitsoftsol.com )
+ */
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="dss_login_as_customer" resource="default" engine="innodb" comment="Dss Login As Customer Table">
+        <column xsi:type="int" name="login_id" padding="10" unsigned="true" nullable="false"
+            identity="true" comment="Admin Login ID"/>
+        <column xsi:type="int" name="customer_id" nullable="true" comment="Customer ID"/>
+        <column xsi:type="int" name="admin_id" nullable="true" comment="Admin ID"/>
+        <column xsi:type="text" name="secret" nullable="true" comment="Login Secret"/>
+        <column xsi:type="smallint" name="used" nullable="false" default="1" comment="Is Login Used"/>
+        <column xsi:type="timestamp" name="created_at" nullable="false" default="CURRENT_TIMESTAMP"
+            on_update="false" comment="Creation Time"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="login_id"/>
+        </constraint>
+        <index referenceId="DSS_LOGIN_AS_CUSTOMER_CUSTOMER_ID" indexType="btree">
+            <column name="customer_id"/>
+        </index>
+        <index referenceId="DSS_LOGIN_AS_CUSTOMER_ADMIN_ID" indexType="btree">
+            <column name="admin_id"/>
+        </index>
+    </table>
+</schema>
