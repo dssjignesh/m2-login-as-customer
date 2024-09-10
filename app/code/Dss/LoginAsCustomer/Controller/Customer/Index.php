@@ -45,9 +45,9 @@ class Index extends \Magento\Framework\App\Action\Action
     /**
      * Execute
      *
-     * @return ResponseInterface|ResultInterface|void
+     * @return void
      */
-    public function execute()
+    public function execute(): void
     {
         $this->messageManager->getMessages(true);
         $login = $this->initLogin();
