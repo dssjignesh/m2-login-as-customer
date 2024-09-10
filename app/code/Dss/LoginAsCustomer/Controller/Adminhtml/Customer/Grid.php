@@ -26,7 +26,7 @@ class Grid extends \Magento\Backend\App\Action
     /**
      * Execute
      *
-     * @return ResponseInterface|ResultInterface|void
+     * @return void
      */
     public function execute(): void
     {
