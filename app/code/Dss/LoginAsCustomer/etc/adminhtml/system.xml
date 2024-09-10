@@ -29,7 +29,7 @@
                     showInWebsite="1" showInStore="0">
                     <label><![CDATA[Enabled]]></label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
-                    <comment><![CDATA[Choose 'yes' to enable module.<br />Version 1.0.5]]></comment>
+                    <comment><![CDATA[Choose 'yes' to enable module.<br />Version 0.0.1]]></comment>
                 </field>
                 <field id="customer_grid_login_column" translate="label comment" type="select" sortOrder="100"
                     showInDefault="1" showInWebsite="0" showInStore="0">
