@@ -1,24 +1,26 @@
 <?xml version="1.0"?>
 <!--
 /**
- * Digit Software Solutions..
+ * Digit Software Solutions.
  *
  * NOTICE OF LICENSE
  *
  * This source file is subject to the EULA
  * that is bundled with this package in the file LICENSE.txt.
  *
- * @category   Dss
- * @package    Dss_LoginAsCustomer
- * @author     Extension Team
+ * @category  Dss
+ * @package   Dss_LoginAsCustomer
+ * @author    Extension Team
  * @copyright Copyright (c) 2024 Digit Software Solutions. ( https://digitsoftsol.com )
  */
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
-    <module name="Dss_LoginAsCustomer">
+    <module name="Dss_LoginAsCustomer" setup_version="1.0.1">
         <sequence>
-             <module name="Magento_Customer"/>
+            <module name="Magento_Backend"/>
+            <module name="Dss_Core"/>
+            <module name="Magento_Customer"/>
         </sequence>
     </module>
 </config>

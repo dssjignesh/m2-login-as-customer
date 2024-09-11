@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0"?>
 <!--
 /**
  * Digit Software Solutions.
@@ -14,13 +14,13 @@
  * @copyright Copyright (c) 2024 Digit Software Solutions. ( https://digitsoftsol.com )
  */
 -->
-<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
-    <actionsColumn name="actions" class="Dss\LoginAsCustomer\Ui\Component\Listing\Column\Actions">
-        <argument name="data" xsi:type="array">
-            <item name="config" xsi:type="array">
-                <item name="indexField" xsi:type="string">entity_id</item>
+    <argument name="data" xsi:type="array">
+        <item name="buttons" xsi:type="array">
+            <item name="dss_login_as_customer" xsi:type="string">
+                Dss\LoginAsCustomer\Block\Adminhtml\Edit\LoginAsCustomerButton
             </item>
-        </argument>
-    </actionsColumn>
-</listing>
+        </item>
+    </argument>
+</form>

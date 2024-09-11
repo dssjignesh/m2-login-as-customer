@@ -1,17 +1,19 @@
 <?php
 /**
- * Digit Software Solutions..
+ * Digit Software Solutions.
  *
  * NOTICE OF LICENSE
  *
  * This source file is subject to the EULA
  * that is bundled with this package in the file LICENSE.txt.
  *
- * @category   Dss
- * @package    Dss_LoginAsCustomer
- * @author     Extension Team
+ * @category  Dss
+ * @package   Dss_LoginAsCustomer
+ * @author    Extension Team
  * @copyright Copyright (c) 2024 Digit Software Solutions. ( https://digitsoftsol.com )
  */
-use Magento\Framework\Component\ComponentRegistrar;
-
-ComponentRegistrar::register(ComponentRegistrar::MODULE, 'Dss_LoginAsCustomer', __DIR__);
+\Magento\Framework\Component\ComponentRegistrar::register(
+    \Magento\Framework\Component\ComponentRegistrar::MODULE,
+    'Dss_LoginAsCustomer',
+    __DIR__
+);
