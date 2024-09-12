@@ -1,4 +1,23 @@
-"You have logged in and will go to customer account in 5 seconds","You have logged in and will go to customer account in 5 seconds!"
-"You are logged in","You are logged in"
-"You are logged in as customer","You are logged in as customer"
+"Login as Customer","Login as Customer"
+"Login as Customer Logs","Login as Customer Logs"
+"You have deleted %1 customer(s).","You have deleted %1 customer(s)."
+"Customer does not exist.","Customer does not exist."
+"An unspecified error occurred. Please contact us for assistance.","An unspecified error occurred. Please contact us for assistance."
+"Something went wrong while processing the request.","Something went wrong while processing the request."
 "Login As Customer","Login As Customer"
+Customers,Customers
+"All Customers","All Customers"
+"Login As Customers","Login As Customers"
+"Login As Customer Logs","Login As Customer Logs"
+General,General
+Enable,Enable
+"Select Yes/No to enable/disable this module","Select Yes/No to enable/disable this module"
+"Are you sure you want to delete selected items?","Are you sure you want to delete selected items?"
+"Delete items","Delete items"
+Delete,Delete
+Id,Id
+"Customer Id","Customer Id"
+"Customer Email","Customer Email"
+"Admin Id","Admin Id"
+"Admin Name","Admin Name"
+"Logged In","Logged In"

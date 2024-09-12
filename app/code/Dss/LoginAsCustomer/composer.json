@@ -1,6 +1,6 @@
 {
     "name": "dss/m2-login-as-customer",
-    "description": "Login As Customer Module",
+    "description": "Dss login as customer for magento 2",
     "type": "magento2-module",
     "version": "0.0.1",
     "authors": [

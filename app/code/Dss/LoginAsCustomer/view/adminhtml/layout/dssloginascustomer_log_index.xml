@@ -14,11 +14,11 @@
  * @copyright Copyright (c) 2024 Digit Software Solutions. ( https://digitsoftsol.com )
  */
 -->
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
-    <router id="admin">
-        <route id="dssloginascustomer" frontName="dssloginascustomer">
-            <module name="Dss_LoginAsCustomer"/>
-        </route>
-    </router>
-</config>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <uiComponent name="dssloginascustomer_log_listing"/>
+        </referenceContainer>
+    </body>
+</page>

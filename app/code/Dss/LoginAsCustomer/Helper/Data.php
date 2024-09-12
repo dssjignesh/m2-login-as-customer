@@ -3,115 +3,97 @@
 declare(strict_types=1);
 
 /**
- * Digit Software Solutions..
+ * Digit Software Solutions.
  *
  * NOTICE OF LICENSE
  *
  * This source file is subject to the EULA
  * that is bundled with this package in the file LICENSE.txt.
  *
- * @category   Dss
- * @package    Dss_LoginAsCustomer
- * @author     Extension Team
+ * @category  Dss
+ * @package   Dss_LoginAsCustomer
+ * @author    Extension Team
  * @copyright Copyright (c) 2024 Digit Software Solutions. ( https://digitsoftsol.com )
  */
 
 namespace Dss\LoginAsCustomer\Helper;
 
-use Magento\Store\Model\ScopeInterface;
+use Magento\Customer\Model\Data\Customer;
 use Magento\Framework\App\Helper\Context;
-use Magento\Framework\Stdlib\DateTime\DateTime;
-use Magento\Framework\Math\Random;
+use Magento\Store\Model\StoreManagerInterface;
+use Magento\Framework\AuthorizationInterface;
+use Magento\Store\Api\Data\StoreInterface;
 
 class Data extends \Magento\Framework\App\Helper\AbstractHelper
 {
-    public const TIME_FRAME = 60;
-    public const XML_PATH_ENABLED = 'dss_loginAscustomer/general/enable';
-    public const XML_PATH_CUSTOMER_GRID_LOGIN_COLUMN = 'dss_loginAscustomer/general/customer_grid_login_column';
-    public const XML_PATH_DSIABLE_PAGE_CACHE = 'dss_loginAscustomer/general/disable_page_cache';
+
+    public const CONFIG_MODULE_PATH = 'loginascustomer';
 
     /**
      * Data constructor.
-     *
      * @param Context $context
-     * @param DateTime $dateTime
-     * @param Random $random
+     * @param StoreManagerInterface $storeManager
+     * @param AuthorizationInterface $authorization
      */
     public function __construct(
         Context $context,
-        protected DateTime $dateTime,
-        protected Random $random
+        protected StoreManagerInterface $storeManager,
+        protected AuthorizationInterface $authorization
     ) {
         parent::__construct($context);
     }
 
     /**
-     * Is enable
+     * Get Config Data key
      *
-     * @return mixed
+     * @param  string $key
+     * @param  null|int $store
+     * @return null|string
      */
-    public function isEnable(): mixed
+    public function getConfig($key, $store = null)
     {
-        return $this->scopeConfig->getValue(
-            self::XML_PATH_ENABLED,
-            ScopeInterface::SCOPE_STORE
+        $store  = $this->storeManager->getStore($store);
+        $result = $this->scopeConfig->getValue(
+            'dss_login_as_customer/' . $key,
+            \Magento\Store\Model\ScopeInterface::SCOPE_STORE,
+            $store
         );
+        return $result;
     }
 
     /**
-     * Get login column
+     * Enable the Module
      *
-     * @return mixed
+     * @return boolean
      */
-    public function getCustomerGridLoginColumn(): mixed
+    public function isEnabled(): bool
     {
-        return $this->scopeConfig->getValue(
-            self::XML_PATH_CUSTOMER_GRID_LOGIN_COLUMN,
-            ScopeInterface::SCOPE_STORE
-        );
+        return (bool) $this->getConfig('general/enabled');
+    }
+    
+    /**
+     * Allowed the module
+     *
+     * @return boolean
+     */
+    public function isAllowed(): bool
+    {
+        return (bool) $this->isEnabled() && $this->authorization->isAllowed('Dss_LoginAsCustomer::allow');
     }
 
     /**
-     * Is diable page cache
+     * Get Store for Customer
      *
-     * @return mixed
+     * @param Customer $customer
+     * @return StoreInterface|null
+     * @throws NoSuchEntityException
      */
-    public function isDisablePageCache(): mixed
+    public function getStore(Customer $customer): ?StoreInterface
     {
-        return $this->scopeConfig->getValue(
-            self::XML_PATH_DSIABLE_PAGE_CACHE,
-            ScopeInterface::SCOPE_STORE
-        );
-    }
+        if ($storeId = $customer->getStoreId()) {
+            return $this->storeManager->getStore($storeId);
+        }
 
-    /**
-     * Retrieve login datetime point
-     *
-     * @return false|string
-     */
-    public function getDateTimePoint(): false|string
-    {
-        return date('Y-m-d H:i:s', $this->dateTime->gmtTimestamp() - self::TIME_FRAME);
-    }
-
-    /**
-     * GMT timestamp
-     *
-     * @return int
-     */
-    public function gmtTimestamp(): int
-    {
-        return $this->dateTime->gmtTimestamp();
-    }
-
-    /**
-     * Get random string
-     *
-     * @return string
-     * @throws \Magento\Framework\Exception\LocalizedException
-     */
-    public function getRandomString(): string
-    {
-        return $this->random->getRandomString(64);
+        return $this->storeManager->getDefaultStoreView();
     }
 }
