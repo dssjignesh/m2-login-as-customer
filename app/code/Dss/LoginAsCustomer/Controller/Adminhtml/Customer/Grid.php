@@ -26,9 +26,9 @@ class Grid extends \Magento\Backend\App\Action
     /**
      * Execute
      *
-     * @return void
+     * @return ResponseInterface|ResultInterface|void
      */
-    public function execute(): void
+    public function execute(): ResponseInterface|ResultInterface
     {
         $this->_view->loadLayout(false);
         $this->_view->renderLayout();

@@ -63,7 +63,7 @@ class Login extends Action
     /**
      * Execute
      *
-     * @return void
+     * @return ResponseInterface|ResultInterface|void
      * @throws \Magento\Framework\Exception\NoSuchEntityException
      * @throws \Magento\Framework\Exception\LocalizedException
      */

@@ -26,9 +26,9 @@ class Post extends \Magento\Framework\App\Action\Action
     /**
      * Execute
      *
-     * @return void
+     * @return ResponseInterface|ResultInterface|void
      */
-    public function execute(): void
+    public function execute()
     {
         $this->_redirect('customer/account');
     }

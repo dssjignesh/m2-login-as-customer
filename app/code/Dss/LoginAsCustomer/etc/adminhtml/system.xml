@@ -21,26 +21,11 @@
             showInDefault="1" showInWebsite="1" showInStore="1" >
             <label>Login As Customer</label>
             <tab>dss</tab>
-<<<<<<< HEAD
             <resource>Dss_LoginAsCustomer::configuration</resource>
             <group id="general" translate="label" type="text" sortOrder="1"
                 showInDefault="1" showInWebsite="0" showInStore="0">
                 <label>General</label>
                 <field id="enabled" translate="label comment" type="select" sortOrder="10"
-=======
-            <label><![CDATA[Login As Customer]]></label>
-             <resource>Dss_LoginAsCustomer::config_section</resource>
-            <group id="general" translate="label" type="text" sortOrder="1" showInDefault="10"
-                showInWebsite="1" showInStore="1">
-                <label><![CDATA[General Options]]></label>
-                <field id="enable" translate="label" type="select" sortOrder="10" showInDefault="1"
-                    showInWebsite="1" showInStore="0">
-                    <label><![CDATA[Enabled]]></label>
-                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
-                    <comment><![CDATA[Choose 'yes' to enable module.<br />Version 0.0.1]]></comment>
-                </field>
-                <field id="customer_grid_login_column" translate="label comment" type="select" sortOrder="100"
->>>>>>> main
                     showInDefault="1" showInWebsite="0" showInStore="0">
                     <label>Enable</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
