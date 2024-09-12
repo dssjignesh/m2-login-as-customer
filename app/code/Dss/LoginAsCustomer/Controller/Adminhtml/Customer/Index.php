@@ -41,7 +41,7 @@ class Index extends Action
     /**
      * Execute
      *
-     * @return void
+     * @return ResponseInterface|ResultInterface|void
      */
     public function execute(): void
     {
