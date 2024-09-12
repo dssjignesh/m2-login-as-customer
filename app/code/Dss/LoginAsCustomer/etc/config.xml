@@ -19,7 +19,13 @@
     <default>
         <dss_login_as_customer>
             <general>
+<<<<<<< HEAD
                 <enabled>0</enabled>
+=======
+                <enable>0</enable>
+                <customer_grid_login_column>actions</customer_grid_login_column>
+                <disable_page_cache>0</disable_page_cache>
+>>>>>>> main
             </general>
         </dss_login_as_customer>
     </default>

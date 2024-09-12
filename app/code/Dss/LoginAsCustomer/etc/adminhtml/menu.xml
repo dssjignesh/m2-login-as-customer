@@ -17,11 +17,21 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
     <menu>
+<<<<<<< HEAD
         <add id="Dss_LoginAsCustomer::login_log" title="Login As Customer" translate="title" module="Magento_Customer"
             sortOrder="70" resource="Dss_LoginAsCustomer::log" parent="Magento_Customer::customer"
                 dependsOnConfig="dss_login_as_customer/general/enabled"/>
         <add id="Dss_LoginAsCustomer::log" title="Logs" translate="title" module="Magento_Customer"
             parent="Dss_LoginAsCustomer::login_log" action="dssloginascustomer/log"
                 resource="Dss_LoginAsCustomer::log"/>
+=======
+        <add id="Dss_LoginAsCustomer::login_log"
+            title="Dss Login As Customer Log"
+            module="Dss_LoginAsCustomer"
+            parent="Magento_Customer::customer"
+            sortOrder="50"
+            resource="Dss_LoginAsCustomer::login_log"
+            action="loginascustomer/customer/"/>
+>>>>>>> main
     </menu>
 </config>
